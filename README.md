@@ -1,3 +1,5 @@
+<img src="https://github.com/RQM-Technologies-dev/qsp-orientation/actions/workflows/ci.yml/badge.svg">
+
 # qsp-orientation
 
 Quaternion-based attitude estimation, coordinate frame transforms, IMU integration, sensor fusion, and drift diagnostics — the orientation and state-estimation layer of the [RQM Technologies QSP ecosystem](https://github.com/RQM-Technologies-dev/qsp-ecosystem).
