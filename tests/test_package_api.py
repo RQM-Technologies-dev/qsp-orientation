@@ -19,6 +19,7 @@ PUBLIC_FUNCTIONS = [
     "world_to_body",
     "compose_rotations",
     "invert_rotation",
+    "estimate_attitude",
     "integrate_gyro",
     "accel_tilt_estimate",
     "gyro_bias_correction",
@@ -76,3 +77,9 @@ def test_module_importable():
 def test_all_contains_public_functions():
     for func_name in PUBLIC_FUNCTIONS:
         assert func_name in qsp_orientation.__all__, f"{func_name} not in __all__"
+
+
+def test_orientation_api():
+    from qsp.orientation import estimate_attitude, integrate_gyro
+    assert callable(estimate_attitude)
+    assert callable(integrate_gyro)
