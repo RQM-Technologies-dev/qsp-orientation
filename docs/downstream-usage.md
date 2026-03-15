@@ -11,7 +11,7 @@ This document explains how downstream systems should consume `qsp-orientation` a
 Inertial navigation systems require consistent frame bookkeeping. Use `body_to_world` and `world_to_body` to transform measured vectors (acceleration, velocity, magnetic field) between the sensor body frame and the world/navigation frame.
 
 ```python
-from qsp_orientation import euler_to_quaternion, body_to_world, world_to_body
+from qsp.orientation import euler_to_quaternion, body_to_world, world_to_body
 import numpy as np
 
 # Attitude quaternion estimated from IMU fusion
@@ -33,7 +33,7 @@ The `compose_rotations` and `invert_rotation` functions are also useful when cha
 For safety-critical or production systems, wrap sensor fusion with continuous orientation health checks. The diagnostics module provides all the building blocks:
 
 ```python
-from qsp_orientation import (
+from qsp.orientation import (
     madgwick_update, drift_angle,
     gyro_stability_metric, accel_consistency_metric,
     orientation_health_score,
@@ -63,7 +63,7 @@ This pattern is suitable for real-time health monitoring in robotics controllers
 Use the IMU module for initial orientation bootstrapping and gyro propagation between sensor fusion steps:
 
 ```python
-from qsp_orientation import accel_tilt_estimate, integrate_gyro, madgwick_update
+from qsp.orientation import accel_tilt_estimate, integrate_gyro, madgwick_update
 import numpy as np
 
 # Bootstrap orientation from accelerometer at startup
@@ -83,7 +83,7 @@ q = integrate_gyro(q, gyro, dt=0.001)  # 1 kHz gyro rate
 For systems with known gyro bias, apply correction before integration:
 
 ```python
-from qsp_orientation import gyro_bias_correction
+from qsp.orientation import gyro_bias_correction
 gyro_corrected = gyro_bias_correction(gyro_raw, bias_estimate)
 q = integrate_gyro(q, gyro_corrected, dt=dt)
 ```
@@ -95,7 +95,7 @@ q = integrate_gyro(q, gyro_corrected, dt=dt)
 Use `slerp` when smooth interpolation between two known orientations is required — for example, in trajectory replanning, animation, or interpolating between sparse sensor updates:
 
 ```python
-from qsp_orientation import euler_to_quaternion, slerp
+from qsp.orientation import euler_to_quaternion, slerp
 
 q_start = euler_to_quaternion(0.0, 0.0, 0.0)
 q_end   = euler_to_quaternion(0.0, 0.0, 1.5708)  # 90° yaw rotation

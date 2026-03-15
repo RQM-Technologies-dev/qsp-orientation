@@ -1,8 +1,8 @@
-"""Tests for qsp_orientation.attitude."""
+"""Tests for qsp.orientation.attitude."""
 import pytest
 import math
 import numpy as np
-from qsp_orientation.attitude import (
+from qsp.orientation.attitude import (
     euler_to_quaternion,
     quaternion_to_euler,
     quaternion_to_rotation_matrix,
@@ -10,7 +10,7 @@ from qsp_orientation.attitude import (
     slerp,
     relative_rotation,
 )
-from qsp_orientation.diagnostics import quaternion_distance
+from qsp.orientation.diagnostics import quaternion_distance
 
 
 def test_euler_to_quaternion_zero_is_identity():

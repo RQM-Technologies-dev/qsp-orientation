@@ -1,14 +1,14 @@
-"""Tests for qsp_orientation.fusion."""
+"""Tests for qsp.orientation.fusion."""
 import pytest
 import math
 import numpy as np
-from qsp_orientation.fusion import (
+from qsp.orientation.fusion import (
     complementary_filter,
     madgwick_update,
     mahony_update,
 )
-from qsp_orientation.imu import accel_tilt_estimate
-from qsp_orientation.diagnostics import quaternion_distance
+from qsp.orientation.imu import accel_tilt_estimate
+from qsp.orientation.diagnostics import quaternion_distance
 
 
 GRAVITY = np.array([0.0, 0.0, 9.81])
@@ -111,7 +111,7 @@ def test_mahony_update_converges():
     integral = np.zeros(3)
     for _ in range(500):
         q, integral = mahony_update(q, [0.0, 0.0, 0.0], accel, dt=0.01, integral_error=integral)
-    from qsp_orientation.attitude import quaternion_to_euler
+    from qsp.orientation.attitude import quaternion_to_euler
     roll, pitch, yaw = quaternion_to_euler(q)
     assert abs(roll - math.pi/2) < 0.1
 

@@ -1,7 +1,7 @@
-"""Tests for qsp_orientation.utils."""
+"""Tests for qsp.orientation.utils."""
 import pytest
 import numpy as np
-from qsp_orientation.utils import (
+from qsp.orientation.utils import (
     normalize_vector, vector_norm, clamp,
     _quat_normalize, _quat_multiply, _quat_conjugate, _quat_rotate_vector,
 )

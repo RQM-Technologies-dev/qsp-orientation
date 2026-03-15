@@ -170,7 +170,7 @@ pip install -e ".[dev]"
 
 ```python
 import math
-from qsp_orientation import euler_to_quaternion, quaternion_to_euler
+from qsp.orientation import euler_to_quaternion, quaternion_to_euler
 
 q = euler_to_quaternion(0.0, 0.0, math.radians(90))
 print(q)  # [0.7071, 0.0, 0.0, 0.7071]
@@ -183,7 +183,7 @@ print(math.degrees(yaw))  # 90.0
 
 ```python
 import numpy as np
-from qsp_orientation import euler_to_quaternion, body_to_world, world_to_body
+from qsp.orientation import euler_to_quaternion, body_to_world, world_to_body
 
 q = euler_to_quaternion(0.0, 0.0, math.radians(45))
 v_body = np.array([1.0, 0.0, 0.0])
@@ -194,7 +194,7 @@ v_world = body_to_world(q, v_body)
 
 ```python
 import numpy as np
-from qsp_orientation import integrate_gyro, accel_tilt_estimate
+from qsp.orientation import integrate_gyro, accel_tilt_estimate
 
 q = np.array([1.0, 0.0, 0.0, 0.0])
 omega = np.array([0.0, 0.0, 1.0])  # 1 rad/s yaw
@@ -205,7 +205,7 @@ q = integrate_gyro(q, omega, dt=0.01)
 
 ```python
 import numpy as np
-from qsp_orientation import complementary_filter, madgwick_update
+from qsp.orientation import complementary_filter, madgwick_update
 
 gravity = np.array([0.0, 0.0, 9.81])
 q = np.array([1.0, 0.0, 0.0, 0.0])
@@ -222,7 +222,7 @@ q = madgwick_update(q, gyro, gravity, beta=0.1, dt=0.01)
 
 ```python
 import math
-from qsp_orientation import (
+from qsp.orientation import (
     euler_to_quaternion, drift_angle,
     gyro_stability_metric, orientation_health_score,
 )

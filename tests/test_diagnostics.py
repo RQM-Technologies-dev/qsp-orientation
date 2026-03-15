@@ -1,8 +1,8 @@
-"""Tests for qsp_orientation.diagnostics."""
+"""Tests for qsp.orientation.diagnostics."""
 import pytest
 import math
 import numpy as np
-from qsp_orientation.diagnostics import (
+from qsp.orientation.diagnostics import (
     drift_angle,
     quaternion_distance,
     gyro_stability_metric,
@@ -10,7 +10,7 @@ from qsp_orientation.diagnostics import (
     mag_consistency_metric,
     orientation_health_score,
 )
-from qsp_orientation.attitude import euler_to_quaternion
+from qsp.orientation.attitude import euler_to_quaternion
 
 
 def test_drift_angle_same_quaternion_zero():

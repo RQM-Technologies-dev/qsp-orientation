@@ -1,6 +1,6 @@
 """Coordinate frame transformation utilities."""
 import numpy as np
-from qsp_orientation.utils import _quat_normalize, _quat_multiply, _quat_conjugate, _quat_rotate_vector
+from qsp.orientation.utils import _quat_normalize, _quat_multiply, _quat_conjugate, _quat_rotate_vector
 
 
 def transform_vector(q, v):
