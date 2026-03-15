@@ -1,8 +1,8 @@
 """Orientation drift diagnostics and health monitoring."""
 import math
 import numpy as np
-from qsp_orientation.utils import clamp, vector_norm, normalize_vector, _quat_normalize, _quat_multiply, _quat_conjugate
-from qsp_orientation.attitude import relative_rotation
+from qsp.orientation.utils import clamp, vector_norm, normalize_vector, _quat_normalize, _quat_multiply, _quat_conjugate
+from qsp.orientation.attitude import relative_rotation
 
 
 def drift_angle(q1, q2, degrees=False):

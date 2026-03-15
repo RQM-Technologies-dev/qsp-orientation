@@ -1,7 +1,7 @@
-"""Tests verifying all public functions are importable from qsp_orientation."""
+"""Tests verifying all public functions are importable from qsp.orientation."""
 import pytest
 import numpy as np
-import qsp_orientation
+import qsp.orientation as qsp_orientation
 
 
 PUBLIC_FUNCTIONS = [
@@ -65,12 +65,12 @@ def test_drift_angle_callable():
 
 
 def test_module_importable():
-    import qsp_orientation.utils
-    import qsp_orientation.attitude
-    import qsp_orientation.frames
-    import qsp_orientation.imu
-    import qsp_orientation.fusion
-    import qsp_orientation.diagnostics
+    import qsp.orientation.utils
+    import qsp.orientation.attitude
+    import qsp.orientation.frames
+    import qsp.orientation.imu
+    import qsp.orientation.fusion
+    import qsp.orientation.diagnostics
 
 
 def test_all_contains_public_functions():

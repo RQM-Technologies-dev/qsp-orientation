@@ -1,7 +1,7 @@
 """Demo: Simulated gyro integration and complementary filter."""
 import math
 import numpy as np
-from qsp_orientation import (
+from qsp.orientation import (
     integrate_gyro,
     complementary_filter,
     quaternion_to_euler,

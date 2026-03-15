@@ -1,8 +1,8 @@
 """IMU integration and tilt estimation utilities."""
 import math
 import numpy as np
-from qsp_orientation.utils import normalize_vector, _quat_normalize, _quat_multiply
-from qsp_orientation.attitude import euler_to_quaternion
+from qsp.orientation.utils import normalize_vector, _quat_normalize, _quat_multiply
+from qsp.orientation.attitude import euler_to_quaternion
 
 
 def integrate_gyro(q, omega, dt):

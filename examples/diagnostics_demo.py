@@ -1,7 +1,7 @@
 """Demo: drift_angle, gyro stability, and orientation health score."""
 import math
 import numpy as np
-from qsp_orientation import (
+from qsp.orientation import (
     euler_to_quaternion,
     drift_angle,
     gyro_stability_metric,

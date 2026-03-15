@@ -41,7 +41,7 @@ Target domains: robotics, drones, inertial navigation, AR/VR tracking, autonomy 
 
 3. **Do not absorb system-level logic.** Product-specific robotics stacks, GPS/INS navigation engines, hardware drivers, and application control loops belong in downstream repos — not here.
 
-4. **Public API changes require care.** All public functions are exported from `qsp_orientation/__init__.py`. Adding or removing exports is a breaking change. Renaming or changing signatures requires updating `__init__.py`, `docs/api-overview.md`, and — if relevant — `docs/downstream-usage.md`.
+4. **Public API changes require care.** All public functions are exported from `qsp/orientation/__init__.py`. Adding or removing exports is a breaking change. Renaming or changing signatures requires updating `__init__.py`, `docs/api-overview.md`, and — if relevant — `docs/downstream-usage.md`.
 
 5. **Keep the repo composable.** Every function should do one clearly defined thing. Avoid side effects, global state, or hidden cross-module dependencies.
 
@@ -53,7 +53,7 @@ Target domains: robotics, drones, inertial navigation, AR/VR tracking, autonomy 
 - Small, focused functions with clear docstrings
 - Quaternions represented as numpy arrays `[w, x, y, z]`
 - Euler angles in radians by default
-- All public functions exported from `qsp_orientation/__init__.py`
+- All public functions exported from `qsp/orientation/__init__.py`
 - Minimal dependencies: only `math` and `numpy`
 
 ## Module Boundaries

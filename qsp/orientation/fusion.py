@@ -1,9 +1,9 @@
 """Sensor fusion filter algorithms."""
 import math
 import numpy as np
-from qsp_orientation.utils import normalize_vector, _quat_normalize, _quat_multiply
-from qsp_orientation.attitude import slerp
-from qsp_orientation.imu import accel_tilt_estimate, integrate_gyro
+from qsp.orientation.utils import normalize_vector, _quat_normalize, _quat_multiply
+from qsp.orientation.attitude import slerp
+from qsp.orientation.imu import accel_tilt_estimate, integrate_gyro
 
 
 def complementary_filter(q_gyro, accel, alpha):

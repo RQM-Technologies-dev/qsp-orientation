@@ -1,9 +1,9 @@
 # API Overview
 
-All public functions are importable directly from `qsp_orientation`. Internal helpers (prefixed with `_`) are not part of the public API and should not be used by downstream consumers.
+All public functions are importable directly from `qsp.orientation`. Internal helpers (prefixed with `_`) are not part of the public API and should not be used by downstream consumers.
 
 ```python
-from qsp_orientation import euler_to_quaternion, body_to_world, madgwick_update, ...
+from qsp.orientation import euler_to_quaternion, body_to_world, madgwick_update, ...
 ```
 
 ---
@@ -15,7 +15,7 @@ Functions for converting between attitude representations: Euler angles, quatern
 ### `euler_to_quaternion(roll, pitch, yaw) → np.ndarray`
 ZYX Euler angles (radians) to unit quaternion `[w, x, y, z]`.
 ```python
-from qsp_orientation import euler_to_quaternion
+from qsp.orientation import euler_to_quaternion
 q = euler_to_quaternion(0.0, 0.0, 1.5708)  # 90 deg yaw
 ```
 
@@ -121,7 +121,7 @@ General-purpose vector utilities. These are part of the public API and may also 
 ### `normalize_vector(v) → np.ndarray`
 Normalize a vector to unit length. Raises `ValueError` on zero vector.
 ```python
-from qsp_orientation import normalize_vector
+from qsp.orientation import normalize_vector
 normalize_vector([3.0, 0.0, 0.0])  # → [1.0, 0.0, 0.0]
 ```
 

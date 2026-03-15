@@ -1,16 +1,16 @@
-"""Tests for qsp_orientation.frames."""
+"""Tests for qsp.orientation.frames."""
 import pytest
 import math
 import numpy as np
-from qsp_orientation.frames import (
+from qsp.orientation.frames import (
     transform_vector,
     body_to_world,
     world_to_body,
     compose_rotations,
     invert_rotation,
 )
-from qsp_orientation.attitude import euler_to_quaternion
-from qsp_orientation.diagnostics import quaternion_distance
+from qsp.orientation.attitude import euler_to_quaternion
+from qsp.orientation.diagnostics import quaternion_distance
 
 
 def test_transform_vector_identity():

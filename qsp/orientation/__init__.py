@@ -1,7 +1,7 @@
 """qsp-orientation: Quaternion-based attitude estimation, frame transforms, IMU fusion, and drift diagnostics."""
 
-from qsp_orientation.utils import normalize_vector, vector_norm, clamp
-from qsp_orientation.attitude import (
+from qsp.orientation.utils import normalize_vector, vector_norm, clamp
+from qsp.orientation.attitude import (
     euler_to_quaternion,
     quaternion_to_euler,
     quaternion_to_rotation_matrix,
@@ -9,25 +9,25 @@ from qsp_orientation.attitude import (
     slerp,
     relative_rotation,
 )
-from qsp_orientation.frames import (
+from qsp.orientation.frames import (
     transform_vector,
     body_to_world,
     world_to_body,
     compose_rotations,
     invert_rotation,
 )
-from qsp_orientation.imu import (
+from qsp.orientation.imu import (
     integrate_gyro,
     accel_tilt_estimate,
     gyro_bias_correction,
     orientation_from_imu,
 )
-from qsp_orientation.fusion import (
+from qsp.orientation.fusion import (
     complementary_filter,
     madgwick_update,
     mahony_update,
 )
-from qsp_orientation.diagnostics import (
+from qsp.orientation.diagnostics import (
     drift_angle,
     quaternion_distance,
     gyro_stability_metric,

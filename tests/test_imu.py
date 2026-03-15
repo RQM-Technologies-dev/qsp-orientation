@@ -1,14 +1,14 @@
-"""Tests for qsp_orientation.imu."""
+"""Tests for qsp.orientation.imu."""
 import pytest
 import math
 import numpy as np
-from qsp_orientation.imu import (
+from qsp.orientation.imu import (
     integrate_gyro,
     accel_tilt_estimate,
     gyro_bias_correction,
     orientation_from_imu,
 )
-from qsp_orientation.diagnostics import quaternion_distance
+from qsp.orientation.diagnostics import quaternion_distance
 
 
 def test_integrate_gyro_zero_omega_unchanged():
@@ -57,7 +57,7 @@ def test_accel_tilt_estimate_pitch_90():
     q = accel_tilt_estimate(accel)
     assert abs(np.linalg.norm(q) - 1.0) < 1e-10
     r, p, y = (0.0, 0.0, 0.0)
-    from qsp_orientation.attitude import quaternion_to_euler
+    from qsp.orientation.attitude import quaternion_to_euler
     roll, pitch, yaw = quaternion_to_euler(q)
     assert abs(pitch - math.pi/2) < 1e-6
 
@@ -67,7 +67,7 @@ def test_accel_tilt_estimate_roll():
     accel = np.array([0.0, 9.81, 0.0])
     q = accel_tilt_estimate(accel)
     assert abs(np.linalg.norm(q) - 1.0) < 1e-10
-    from qsp_orientation.attitude import quaternion_to_euler
+    from qsp.orientation.attitude import quaternion_to_euler
     roll, pitch, yaw = quaternion_to_euler(q)
     assert abs(roll - math.pi/2) < 1e-6
 

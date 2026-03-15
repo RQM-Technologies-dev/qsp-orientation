@@ -1,7 +1,7 @@
 """Attitude representation utilities: Euler/quaternion/matrix conversions and SLERP."""
 import math
 import numpy as np
-from qsp_orientation.utils import clamp, _quat_normalize, _quat_multiply, _quat_conjugate
+from qsp.orientation.utils import clamp, _quat_normalize, _quat_multiply, _quat_conjugate
 
 
 def euler_to_quaternion(roll, pitch, yaw):

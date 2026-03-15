@@ -1,7 +1,7 @@
 """Demo: Euler → quaternion, quaternion → rotation matrix, SLERP."""
 import math
 import numpy as np
-from qsp_orientation import (
+from qsp.orientation import (
     euler_to_quaternion,
     quaternion_to_rotation_matrix,
     slerp,

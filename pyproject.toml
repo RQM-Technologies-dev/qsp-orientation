@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qsp-orientation"
-version = "0.1.0"
+version = "0.1.1"
 description = "Quaternion-based attitude estimation, frame transforms, IMU fusion, and drift diagnostics"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -14,5 +14,5 @@ dependencies = ["numpy"]
 dev = ["pytest"]
 
 [tool.setuptools.packages.find]
-where = ["."]
-include = ["qsp_orientation*"]
+namespaces = true
+include = ["qsp*"]

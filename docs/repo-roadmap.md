@@ -71,6 +71,6 @@ Until that migration happens, keep these helpers minimal and prefixed with `_`. 
 
 ## Version and Stability Notes
 
-- The public API (all exports from `qsp_orientation/__init__.py`) should be treated as stable.
+- The public API (all exports from `qsp/orientation/__init__.py`) should be treated as stable.
 - Signature changes to public functions are breaking changes and require a version bump.
 - Internal `_quat_*` helpers are not stable API and may change or be removed when `qsp-core` is available.
